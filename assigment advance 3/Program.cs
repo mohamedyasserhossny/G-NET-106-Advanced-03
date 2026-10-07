@@ -51,8 +51,33 @@
             foreach (var item in leaderboard)
             {
                 Console.WriteLine($"{item.Key},{item.Value}");
-            } 
+            }
             #endregion
+            #region question 3
+            Dictionary<string, int> phonebook = new Dictionary<string, int>();
+            phonebook.Add("mohamed", 0102223333);
+            phonebook.Add("ahmed", 90932048);
+            phonebook.Add("fareeda", 88787878);
+            phonebook.Add("ali", 7756565);
+            phonebook["sayed"] = 77868686;
+            try
+            {
+                phonebook.Add("mohamed", 444444444);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.WriteLine(phonebook.TryAdd("ahmed", 66666666));
+            Console.WriteLine(phonebook.ContainsKey("samir"));
+            foreach (var item in phonebook)
+            {
+                Console.WriteLine(item.Key);
+                Console.WriteLine(item.Value);
+            }
+
+            #endregion
+
 
         }
     }
