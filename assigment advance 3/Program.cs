@@ -25,8 +25,35 @@
             Console.WriteLine(grades.Find(n => n > 90));
             grades.RemoveAll(n => n < 75);
             Console.WriteLine(grades.Contains(100));
-            Console.WriteLine(grades.ConvertAll(n => n.ToString())); 
+            Console.WriteLine(grades.ConvertAll(n => n.ToString()));
             #endregion
+            #region question 2
+            SortedList<int, string> leaderboard = new SortedList<int, string>();
+            leaderboard.Add(500, "ahmed");
+            leaderboard.Add(200, "sara");
+            leaderboard.Add(800, "ali");
+            leaderboard.Add(350, "mona");
+            foreach (var item in leaderboard)
+            {
+                Console.WriteLine($"{item.Key},{item.Value}");
+            }
+            Console.WriteLine(leaderboard.Keys.Contains(500));
+            if (leaderboard.TryGetValue(999, out string name))
+            {
+                Console.Write(name);
+
+            }
+            else
+            {
+                Console.WriteLine("not found");
+            }
+            leaderboard.Remove(200);
+            foreach (var item in leaderboard)
+            {
+                Console.WriteLine($"{item.Key},{item.Value}");
+            } 
+            #endregion
+
         }
     }
 }
